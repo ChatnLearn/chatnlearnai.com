@@ -142,15 +142,14 @@ function tryDemo() {
     fetch("https://chatnlearnai-com.onrender.com/start-demo")
         .then(res => res.json())
         .then(data => {
-            console.log("Response from backend:", data); // <- Add this line
             if (data.url) {
                 window.location.href = data.url;
             } else {
-                alert("Failed to start session.");
+                alert("Failed to get demo session.");
             }
         })
         .catch(err => {
-            console.error(err);
+            console.error("Fetch error:", err);
             alert("Something went wrong.");
         });
 }
