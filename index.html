@@ -135,24 +135,25 @@
     <p>AI-Powered Oracy Learning Platform to boost confidence, fluency, and critical thinking.</p>
     <div class="cta-btns">
       <button onclick="tryDemo()">Try a Demo Session</button>
+      <script>
+      function tryDemo() {
+          fetch("https://chatnlearnai-com.onrender.com")
+              .then(res => res.json())
+              .then(data => {
+                  if (data.url) {
+                      window.location.href = data.url;
+                  } else {
+                      alert("Failed to start session.");
+                  }
+              })
+              .catch(err => {
+                  console.error(err);
+                  alert("Something went wrong.");
+              });
+      }
+      </script>
 
-<script>
-function tryDemo() {
-    fetch("https://chatnlearnai-com.onrender.com")
-        .then(res => res.json())
-        .then(data => {
-            if (data.url) {
-                window.location.href = data.url;
-            } else {
-                alert("Failed to start session.");
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            alert("Something went wrong.");
-        });
-}
-</script>
+
       <a href="#see-how-it-works">See How It Works</a>
     </div>
   </section>
