@@ -25,7 +25,7 @@ def start_demo():
         "properties": {
             "max_call_duration": 180,
             "participant_left_timeout": 5,
-            "participant_absent_timeout": 60,
+            "participant_absent_timeout": 5,
             "enable_recording": True,
             "enable_closed_captions": True,
             "language": "english",
@@ -52,4 +52,3 @@ def start_demo():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
-
