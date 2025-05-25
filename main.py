@@ -41,13 +41,22 @@ def start_demo():
     }
 
     response = requests.post(url, json=payload, headers=headers)
-    response_json = response.json()
-    conversation_url = response_json.get("conversation_url")
+        print("Tavus API status code:", response.status_code)
+        print("Tavus API response:", response.text)
 
-    if conversation_url:
-        return jsonify({"url": conversation_url})
-    else:
-        return jsonify({"error": "Failed to start session"}), 500
+        # Try to parse the response
+        try:
+            response_json = response.json()
+        except Exception as parse_err:
+            print("JSON parse error:", parse_err)
+            return jsonify({"error": "Invalid JSON from Tavus"}), 500
+
+        # Return the whole Tavus response for now
+        return jsonify(response_json)
+
+    except Exception as e:
+        print("Unhandled error:", str(e))
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
