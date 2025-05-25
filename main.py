@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins=["https://chatnlearnai.com"])
 
 @app.route('/start-demo', methods=['GET'])
 def start_demo():
