@@ -134,11 +134,11 @@
     <h1>Talk to Learn. Learn to Talk.</h1>
     <p>AI-Powered Oracy Learning Platform to boost confidence, fluency, and critical thinking.</p>
     <div class="cta-btns">
-      <button onclick="tryDemo()">Try a Demo Session</button>
+      <a><button onclick="tryDemo()">Try a Demo Session</button></a>
 
 <script>
 function tryDemo() {
-    fetch("https://your-backend.onrender.com/start-demo")
+    fetch("https://chatnlearnai-com.onrender.com")
         .then(res => res.json())
         .then(data => {
             if (data.url) {
