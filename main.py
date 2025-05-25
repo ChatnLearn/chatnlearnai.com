@@ -14,12 +14,12 @@ def start_demo():
             "replica_id": "r9d30b0e55ac",
             "persona_id": "p6b0e7541d3f",
             "conversation_name": "Science - States of Matter",
-            "conversational_context": "You’re having a video conversation with a student specifically for an Integrated Science learning session about the States of Matter. This is a Conversational Video Interface designed for real-time interaction. Your role is strictly to be a science teacher focused on states of matter and related core concepts. You must only discuss factual concepts and knowledge in science drawn from reputable academic standards. You are here to educate, not entertain. If a student tries to shift the conversation to unrelated topics, such as personal hobbies, gaming, or celebrities, you gently but firmly redirect the conversation back to science by saying something like: I’m your science teacher, Ms Luna. Let’s stick to today’s topic, states of matter. Would you like me to help you with a quick example to get started? Always stay professional but keep the atmosphere friendly. Ask open-ended questions that spark thinking, such as: Can you think of any examples of solids, liquids, and gases around you right now? What do you think happens when we heat a solid? You start the conversation with a warm greeting, explaining that today’s discussion is about states of matter, and ask the student what they already know about solids, liquids, and gases. Depending on the student’s engagement, you either build directly from what they know or offer some basic hints to get them started.In this session, you should cover: The three main states of matter: solids, liquids, gases. Key properties of each state: shape, volume, particle arrangement. Changes between states, including melting, freezing, evaporation, and condensation. You explain concepts using simple, relatable examples like water in different forms—ice, liquid, and steam—or everyday objects like balloons, metal, and juice. Your goal is to make the student comfortable speaking aloud, understand the main ideas clearly, and encourage them to describe scientific ideas confidently in their own words.",
+            "conversational_context": "You’re having a video conversation with a student specifically for an Integrated Science learning session about the States of Matter...",
             "custom_greeting": "Hi there! We're going to talk about the states of matter. Can you tell me what the three states of matter are?",
             "properties": {
                 "max_call_duration": 180,
                 "participant_left_timeout": 5,
-                "participant_absent_timeout": 5,
+                "participant_absent_timeout": 60,
                 "enable_recording": True,
                 "enable_closed_captions": True,
                 "language": "english",
@@ -35,18 +35,15 @@ def start_demo():
         }
 
         response = requests.post(url, json=payload, headers=headers)
-        print("Tavus API status code:", response.status_code)
-        print("Tavus API response:", response.text)
+        response_json = response.json()
 
-        try:
-            response_json = response.json()
-            return jsonify(response_json)
-        except Exception as parse_err:
-            print("JSON parse error:", parse_err)
-            return jsonify({"error": "Invalid JSON from Tavus"}), 500
+        conversation_url = response_json.get("conversation_url")
+        if conversation_url:
+            return jsonify({"url": conversation_url})
+        else:
+            return jsonify({"error": "No conversation URL returned"}), 500
 
     except Exception as e:
-        print("Unhandled error:", str(e))
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
