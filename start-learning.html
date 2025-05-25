@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatnLearn – Start Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f8fafc; }
+    .section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e0e7ef;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      color: #80d1e2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f3f4f6;
+      color: #80d1e2;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="section">
+    <h2>Choose Your Learning Mode</h2>
+    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 max-w-5xl mx-auto">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden flex-1 transition-all duration-300 card-hover">
+        <div class="p-8 flex flex-col h-full">
+          <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">Talk to Learn (Subject Knowledge)</h3>
+          <p class="text-gray-600 flex-grow">Engage in subject-specific conversations with our AI tutor. Learn through interactive discussions about any topic you're interested in.</p>
+          <div class="mt-8">
+            <a href="talk-to-learn.html" class="px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">Explore Subjects</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden flex-1 transition-all duration-300 card-hover">
+        <div class="p-8 flex flex-col h-full">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">Learn to Talk (Language Practice)</h3>
+          <p class="text-gray-600 flex-grow">Practice your language skills with our AI tutor. Get real-time feedback on pronunciation, grammar, and vocabulary.</p>
+          <div class="mt-8">
+            <a href="learn-to-talk.html" class="px-6 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors inline-block">Explore Languages</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div>© 2025 ChatnLearn. All rights reserved.</div>
+  </div>
+</body>
+<script>
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  });
+</script>
+</html> 

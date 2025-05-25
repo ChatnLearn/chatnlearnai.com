@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatnLearn – Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f8fafc; }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #80d1e2;
+      text-decoration: none;
+    }
+    .navbar nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .navbar nav a {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .navbar nav a:hover {
+      color: #80d1e2;
+    }
+    .navbar .lang {
+      margin-left: 2rem;
+      padding-left: 2rem;
+      border-left: 1px solid #e5e7eb;
+    }
+    .navbar .lang a {
+      color: #80d1e2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar .lang a:hover {
+      color: #4bbfd6;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.2s;
+    }
+    .dropdown-content a:hover {
+      background-color: #f3f4f6;
+      color: #80d1e2;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e0e7ef;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #80d1e2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .section p {
+      color: #4b5563;
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #80d1e2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s;
+      margin: 0 8px;
+    }
+    .button:hover {
+      background-color: #6bc0d1;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="section">
+    <h2>404</h2>
+    <h3 style="font-size: 1.5rem; color: #4b5563; margin-bottom: 16px;">Coming Soon</h3>
+    <p>We're working hard to develop this feature. Please check back later!</p>
+    <div>
+      <a href="index.html" class="button">Return to Home</a>
+      <a href="learn-to-talk.html" class="button">Start Learning</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="not-found.html">Privacy Policy</a> | <a href="not-found.html">Terms of Service</a>
+    </div>
+    <div>© 2025 ChatnLearn. All rights reserved.</div>
+  </div>
+</body>
+<script>
+fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  });
+</script> 

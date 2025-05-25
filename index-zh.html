@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatnLearn: AI口語學習平台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f8fafc; }
+    .hero {
+      background: linear-gradient(90deg, #80d1e2 0%, #e0f7fa 100%);
+      color: #22223b;
+      text-align: center;
+      padding: 80px 20px 60px 20px;
+      border-radius: 0 0 32px 32px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #22223b;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 36px;
+      color: #444;
+    }
+    .hero .cta-btns a {
+      background: #80d1e2;
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 8px #e0e7ef;
+      transition: background 0.2s, color 0.2s;
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .hero .cta-btns a:hover {
+      background: #4bbfd6;
+      color: #fff;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e0e7ef;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      color: #80d1e2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .final-cta {
+      text-align: center;
+      margin: 48px 0 0 0;
+    }
+    .final-cta a {
+      background: #80d1e2;
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 8px #e0e7ef;
+      transition: background 0.2s, color 0.2s;
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .final-cta a:hover {
+      background: #4bbfd6;
+      color: #fff;
+    }
+    .avatar-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: #4b5563;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f3f4f6;
+      color: #80d1e2;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="hero">
+    <h1>以言學理，學以致言</h1>
+    <p>AI口語學習平台，提升自信、流利度和批判性思維。</p>
+    <div class="cta-btns">
+      <a href="not-found-zh.html">體驗演示</a>
+      <a href="#how-it-works">了解工作原理</a>
+    </div>
+  </section>
+
+  <div class="section">
+    <h2>什麼是ChatnLearn？</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto; color:#444; font-size:1.1rem;">ChatnLearn是一個創新的教育平台，利用AI驅動的對話幫助學生發展學科知識和溝通技能。我們的互動方法為學習者創造了一個安全的練習空間，可以即時獲得反饋，通過有意義的對話建立自信。</p>
+  </div>
+
+  <div class="section">
+    <h2>選擇您的學習模式</h2>
+    <div class="flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 max-w-5xl mx-auto">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden flex-1 transition-all duration-300 card-hover">
+        <div class="p-8 flex flex-col h-full">
+          <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">通過對話學習（學科知識）</h3>
+          <p class="text-gray-600 flex-grow">與我們的AI導師進行學科特定的對話。通過互動討論學習您感興趣的任何主題。</p>
+          <div class="mt-8">
+            <a href="talk-to-learn-zh.html" class="px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">探索學科</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden flex-1 transition-all duration-300 card-hover">
+        <div class="p-8 flex flex-col h-full">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-gray-800">學習對話（語言練習）</h3>
+          <p class="text-gray-600 flex-grow">與我們的AI導師練習語言技能。獲得發音、語法和詞彙的即時反饋。</p>
+          <div class="mt-8">
+            <a href="learn-to-talk-zh.html" class="px-6 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors inline-block">探索語言</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">了解運作方式</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="relative" style="padding-top: 56.25%;">
+          <div id="thumbnailContainer" class="absolute inset-0 cursor-pointer">
+            <img id="videoThumbnail" src="thumbnail.png" alt="Video Thumbnail" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 hover:bg-opacity-40 transition-all duration-300">
+              <div class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                <svg class="w-12 h-12 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <video id="demoVideo" class="absolute inset-0 w-full h-full object-cover" controls preload="auto">
+            <source src="demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <h2>ChatnLearn的優勢</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">個性化反饋</h3>
+        <p class="text-gray-600">獲得即時、量身定制的溝通和理解反饋。</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">建立自信</h3>
+        <p class="text-gray-600">在無評判的環境中練習，培養說話自信。</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">教師支持</h3>
+        <p class="text-gray-600">為課堂教學提供額外的練習機會。</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2 text-gray-800">安全練習</h3>
+        <p class="text-gray-600">在無懼評判的環境中犯錯和學習。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>為什麼口語能力很重要</h2>
+    <div class="flex flex-col md:flex-row items-start max-w-5xl mx-auto">
+      <div class="md:w-3/4 mb-8 md:mb-0 md:pr-12">
+        <p class="text-lg text-gray-600 mb-4">口語能力 - 通過口語表達想法的能力 - 是傳統教育中經常被忽視的基本技能。</p>
+        <p class="text-lg text-gray-600">研究表明，經常參與結構化對話的學生在批判性思維、學科理解和學術環境中的自信心方面都有所提高。</p>
+      </div>
+      <div class="md:w-1/4 flex justify-center">
+        <div class="avatar-animation">
+          <svg class="w-48 h-48" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="80" fill="#c7d2fe" />
+            <circle cx="80" cy="85" r="10" fill="#312e81" />
+            <circle cx="120" cy="85" r="10" fill="#312e81" />
+            <path d="M70,115 Q100,135 130,115" stroke="#312e81" stroke-width="5" fill="none" />
+            <path d="M60,60 Q70,40 100,40 Q130,40 140,60" stroke="#312e81" stroke-width="5" fill="none" />
+            <circle cx="100" cy="90" r="50" fill="none" stroke="#312e81" stroke-width="2" stroke-dasharray="5,5" />
+            <g class="speech-bubble">
+              <path d="M140,70 Q160,65 155,85 Q150,100 140,95" fill="#ffffff" />
+              <text x="145" y="85" font-size="12" fill="#4f46e5">你好！</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <img src="oracy.png" alt="Why Oracy Matters Illustration" class="mt-6 rounded-lg shadow-lg">
+      <p class="text-sm text-gray-500 mt-2">來源: Oracy Cambridge <a href="https://oracycambridge.org/" class="text-blue-500 underline" target="_blank">https://oracycambridge.org/</a></p>
+  </div>
+
+  <div class="final-cta">
+    <a href="start-learning-zh.html">立即開始學習</a>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="#">隱私政策</a> | <a href="#">服務條款</a>
+    </div>
+    <div>© 2025 ChatnLearn. 保留所有權利。</div>
+  </div>
+
+  <script>
+    fetch('navbar-zh.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const thumbnailContainer = document.getElementById('thumbnailContainer');
+      const video = document.getElementById('demoVideo');
+      
+      // Initially hide the video
+      video.style.display = 'none';
+      
+      thumbnailContainer.addEventListener('click', function() {
+        // Hide thumbnail container
+        thumbnailContainer.style.display = 'none';
+        // Show and play video
+        video.style.display = 'block';
+        video.play().catch(function(error) {
+          console.log("Video playback failed:", error);
+        });
+      });
+
+      // When video ends, show thumbnail again
+      video.addEventListener('ended', function() {
+        video.style.display = 'none';
+        thumbnailContainer.style.display = 'block';
+      });
+    });
+  </script>
+</body> 

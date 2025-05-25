@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatnLearn – Talk to Learn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f8fafc; }
+    .section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e0e7ef;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      color: #80d1e2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .topic-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .topic-card h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .topic-card p {
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .subject {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .subject.physics {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .subject.history {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .subject.economics {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .subject.literature {
+      background: #90D6FF;
+      color: #0000FF;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="section">
+    <h2>Talk to Learn</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+      Choose a topic to start an interactive conversation. Our AI will guide you through the discussion, helping you learn through natural dialogue.
+    </p>
+    
+    <div class="topic-grid">
+      <div class="topic-card">
+        <span class="subject physics">Physics</span>
+        <h3>Force and Motion</h3>
+        <p>Explore the fundamental principles of force and motion through interactive discussions. Learn about Newton's laws, types of forces, and their effects on objects in motion.</p>
+        <button onclick="startConversation('force-and-motion', 'Force and Motion')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">Start Conversation</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject history">History</span>
+        <h3>World War II</h3>
+        <p>Dive into the complex events and impacts of World War II. Discuss key battles, political developments, and the lasting effects on global society and international relations.</p>
+        <button onclick="startConversation('world-war-ii', 'World War II')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">Start Conversation</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject economics">Economics</span>
+        <h3>Market Structures</h3>
+        <p>Explore different market structures and their impact on business behavior and consumer welfare. Discuss perfect competition, monopolies, and everything in between.</p>
+        <button onclick="startConversation('market-structures', 'Market Structures')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">Start Conversation</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject literature">Literature</span>
+        <h3>Shakespeare's Works</h3>
+        <p>Analyze the timeless works of William Shakespeare. Discuss themes, characters, and literary devices in plays like Hamlet, Macbeth, and Romeo and Juliet.</p>
+        <button onclick="startConversation('shakespeares-works', "Shakespeare's Works")" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">Start Conversation</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div>© 2025 ChatnLearn. All rights reserved.</div>
+  </div>
+</body>
+<script>
+  async function startConversation(lessonId, lessonName) {
+    // Redirect to not-found page
+    window.location.href = 'not-found.html';
+  }
+
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+</script> 

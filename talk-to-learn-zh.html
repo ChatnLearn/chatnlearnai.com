@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatnLearn – 通過對話學習</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f8fafc; }
+    .section {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px #e0e7ef;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+    }
+    .section h2 {
+      color: #80d1e2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .topic-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .topic-card h3 {
+      color: #1f2937;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .topic-card p {
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .subject {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .subject.physics {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .subject.history {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .subject.economics {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .subject.literature {
+      background: #90D6FF;
+      color: #0000FF;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="section">
+    <h2>通過對話學習</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+      選擇一個主題開始互動對話。我們的AI將引導您進行討論，通過自然對話幫助您學習。
+    </p>
+    
+    <div class="topic-grid">
+      <div class="topic-card">
+        <span class="subject physics">物理</span>
+        <h3>力和運動</h3>
+        <p>通過互動討論探索力和運動的基本原理。學習牛頓定律、各種力的類型以及它們對運動物體的影響。</p>
+        <button onclick="startConversation('force-and-motion', '力和運動')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">開始對話</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject history">歷史</span>
+        <h3>第二次世界大戰</h3>
+        <p>深入探討二戰的複雜事件和影響。討論關鍵戰役、政治發展以及對全球社會和國際關係的持久影響。</p>
+        <button onclick="startConversation('world-war-ii', '第二次世界大戰')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">開始對話</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject economics">經濟學</span>
+        <h3>市場結構</h3>
+        <p>探索不同的市場結構及其對企業行為和消費者福利的影響。討論完全競爭、壟斷以及介於兩者之間的各種市場形式。</p>
+        <button onclick="startConversation('market-structures', '市場結構')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">開始對話</button>
+      </div>
+
+      <div class="topic-card">
+        <span class="subject literature">文學</span>
+        <h3>莎士比亞作品</h3>
+        <p>分析威廉·莎士比亞的永恆作品。討論《哈姆雷特》、《麥克白》和《羅密歐與朱麗葉》等戲劇中的主題、人物和文學手法。</p>
+        <button onclick="startConversation('shakespeares-works', '莎士比亞作品')" class="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors inline-block">開始對話</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <a href="#">隱私政策</a> | <a href="#">服務條款</a>
+    </div>
+    <div>© 2025 ChatnLearn. 保留所有權利。</div>
+  </div>
+</body>
+<script>
+  async function startConversation(lessonId, lessonName) {
+    // Redirect to not-found page
+    window.location.href = 'not-found-zh.html';
+  }
+
+  fetch('navbar-zh.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+</script> 
