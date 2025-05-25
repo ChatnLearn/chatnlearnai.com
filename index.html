@@ -142,6 +142,7 @@ function tryDemo() {
     fetch("https://chatnlearnai-com.onrender.com/start-demo")
         .then(res => res.json())
         .then(data => {
+            console.log("Response from backend:", data); // <- Add this line
             if (data.url) {
                 window.location.href = data.url;
             } else {
