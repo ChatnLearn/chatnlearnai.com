@@ -41,22 +41,20 @@ def start_demo():
     }
 
     response = requests.post(url, json=payload, headers=headers)
-        print("Tavus API status code:", response.status_code)
-        print("Tavus API response:", response.text)
+    print("Tavus API status code:", response.status_code)
+    print("Tavus API response:", response.text)
 
-        # Try to parse the response
-        try:
-            response_json = response.json()
-        except Exception as parse_err:
-            print("JSON parse error:", parse_err)
-            return jsonify({"error": "Invalid JSON from Tavus"}), 500
+    try:
+        response_json = response.json()
+    except Exception as parse_err:
+        print("JSON parse error:", parse_err)
+        return jsonify({"error": "Invalid JSON from Tavus"}), 500
 
-        # Return the whole Tavus response for now
-        return jsonify(response_json)
+    return jsonify(response_json)
 
-    except Exception as e:
-        print("Unhandled error:", str(e))
-        return jsonify({"error": str(e)}), 500
+except Exception as e:
+    print("Unhandled error:", str(e))
+    return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
