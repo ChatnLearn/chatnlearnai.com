@@ -134,7 +134,25 @@
     <h1>Talk to Learn. Learn to Talk.</h1>
     <p>AI-Powered Oracy Learning Platform to boost confidence, fluency, and critical thinking.</p>
     <div class="cta-btns">
-      <a href="not-found.html">Try a Demo Session</a>
+      <button onclick="tryDemo()">Try a Demo Session</button>
+
+<script>
+function tryDemo() {
+    fetch("https://your-backend.onrender.com/start-demo")
+        .then(res => res.json())
+        .then(data => {
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                alert("Failed to start session.");
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Something went wrong.");
+        });
+}
+</script>
       <a href="#see-how-it-works">See How It Works</a>
     </div>
   </section>
