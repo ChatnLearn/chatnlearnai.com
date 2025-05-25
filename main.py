@@ -18,8 +18,8 @@ def start_demo():
             "custom_greeting": "Hi there! We're going to talk about the states of matter. Can you tell me what the three states of matter are?",
             "properties": {
                 "max_call_duration": 180,
-                "participant_left_timeout": 5,
-                "participant_absent_timeout": 60,
+                "participant_left_timeout": 2,
+                "participant_absent_timeout": 10,
                 "enable_recording": True,
                 "enable_closed_captions": True,
                 "language": "english",
