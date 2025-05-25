@@ -48,3 +48,8 @@ def start_demo():
         return jsonify({"url": conversation_url})
     else:
         return jsonify({"error": "Failed to start session"}), 500
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
+
