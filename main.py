@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import requests
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app, origins=["https://chatnlearnai.com"])
@@ -28,9 +29,11 @@ def start_demo():
                 "aws_assume_role_arn": ""
             }
         }
-
+        
+        api_key = os.getenv("tavus_api_key")
+        
         headers = {
-            "x-api-key": "f1241dd53a8449fe96ddb7da0a7df444",
+            "x-api-key": "tavus_api_key",
             "Content-Type": "application/json"
         }
 
