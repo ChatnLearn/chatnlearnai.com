@@ -33,7 +33,7 @@ def start_demo():
         api_key = os.getenv("tavus_api_key")
         
         headers = {
-            "x-api-key": "api_key",
+            "x-api-key": api_key,
             "Content-Type": "application/json"
         }
 
