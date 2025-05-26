@@ -20,7 +20,7 @@ def start_demo():
             "properties": {
                 "max_call_duration": 180,
                 "participant_left_timeout": 2,
-                "participant_absent_timeout": 10,
+                "participant_absent_timeout": 60,
                 "enable_recording": True,
                 "enable_closed_captions": True,
                 "language": "english",
