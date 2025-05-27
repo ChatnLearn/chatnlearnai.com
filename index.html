@@ -134,10 +134,15 @@
     <h1>Talk to Learn. Learn to Talk.</h1>
     <p>AI-Powered Oracy Learning Platform to boost confidence, fluency, and critical thinking.</p>
     <div class="cta-btns">
-      <a><button onclick="tryDemo()">Try a Demo Session</button></a>
+     <a>
+  <button onclick="tryDemo()">Try a Demo Session</button>
+</a>
+<p id="loading-message" style="display:none;">Loading... Please wait up to 30 seconds.</p>
 
 <script>
 function tryDemo() {
+    document.getElementById("loading-message").style.display = "block"; // Show loading message
+
     fetch("https://chatnlearnai-com.onrender.com/start-demo")
         .then(res => res.json())
         .then(data => {
@@ -145,14 +150,17 @@ function tryDemo() {
                 window.location.href = data.url;
             } else {
                 alert("Failed to get demo session. Please try again later.");
+                document.getElementById("loading-message").style.display = "none";
             }
         })
         .catch(err => {
             console.error("Fetch error:", err);
             alert("Something went wrong.");
+            document.getElementById("loading-message").style.display = "none";
         });
 }
 </script>
+
 
       <a href="#see-how-it-works">See How It Works</a>      
     </div>
