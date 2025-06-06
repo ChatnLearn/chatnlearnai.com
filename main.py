@@ -13,7 +13,6 @@ def start_demo():
 
         payload = {
             "replica_id": "r9d30b0e55ac",
-            "persona_id": "p6b0e7541d3f",
             "conversation_name": "Science - States of Matter",
             "conversational_context": "You’re having a video conversation with a student specifically for an Integrated Science learning session about the States of Matter...",
             "custom_greeting": "Hi there! We're going to talk about the states of matter. Can you tell me what the three states of matter are?",
